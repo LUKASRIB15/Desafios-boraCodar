@@ -1,0 +1,226 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+:root{
+  font-size: 62.5%;
+  --text-color: #FFFFFF;
+  --background-image: url(./assets/background.png);
+  --background-switch: url(./assets/MoonStars.svg) ;
+  --background-button: rgba(255,255,255,0.1);
+  --border-button: rgba(255,255,255,0.5);
+  --background-button-hover: rgba(255,255,255,0.05);
+  --border-profile: rgba(255,255,255,0.5);
+}
+
+.light{
+  --text-color: #000000;  
+  --background-image: url(./assets/background-light-mode.png);
+  --background-switch: url(./assets/Sun.svg);
+  --background-button: rgba(0,0,0,0.05);
+  --border-button: rgba(0,0,0,0.5);
+  --background-button-hover: rgba(0,0,0,0.2);
+  --border-profile: rgba(0,0,0,0.5);
+}
+
+body{
+  font-size: 1.6rem;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-color);
+  font-weight: 400;
+  height: 100vh;
+  background-image: var(--background-image);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+
+main{
+  width: 100%;
+  max-width: 588px;
+  margin: auto;
+}
+
+/* Profile */
+#profile{
+  display: grid;
+  place-items: center;
+  gap: 0.8rem;
+  padding: 2.4rem 0;
+}
+
+#profile img{
+  border-radius: 999px;
+  outline: 1.5px solid var(--border-profile);
+  box-sizing: initial;
+}
+
+/* Botão switch */
+#switch-container{
+  position: relative;
+  max-width: 64px;
+  width: 100%;
+  margin: 0.4rem auto;
+}
+
+#switch-container button{
+  background-color: #FFFFFF;
+  padding: 0.8rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  border: none;
+  background-image: var(--background-switch);
+  background-repeat: no-repeat;
+  background-position: center;
+
+  position: absolute;
+  top: 50%;
+  left:0;
+  z-index: 1;
+  transform: translateY(-50%);
+  transition: all 0.2s;
+  animation: slide-back 0.2s;
+}
+
+.light #switch-container button{
+  animation: slide-in 0.2s forwards;
+}
+
+#switch-container button:hover{
+  outline: 8px solid var(--background-button-hover);
+}
+
+#switch-container span{
+  display: block;
+  width: 6.4rem;
+  height: 2.4rem;
+  background: var(--background-button);
+  border: 1px solid var(--border-button);
+  backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+/* Button-links */
+.button-links{
+  padding: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap:1.6rem
+}
+
+.button-links ul{
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-links li{
+  background: var(--background-button);
+  width: 100%;
+  padding: 1.6rem 2.4rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-button);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: background 0.2s, border 0.2s;
+}
+
+.button-links li:hover{
+  background: var(--background-button-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+.button-links li a{
+  color: var(--text-color);
+  font-weight: 500;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* social-media-icons */
+.social-media{
+  padding:2.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.social-media ion-icon{
+  width: 24px;
+  height:24px;
+}
+
+.social-media a{
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+
+.social-media a:hover{
+  background-color: var(--background-button-hover);
+}
+
+/* Rodapé */
+footer{
+  padding: 2.4rem;
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer a{
+  color: var(--text-color);
+}
+
+/* keyframes animation*/
+@keyframes slide-in{
+  from{
+    left:0;
+  }
+  to{
+    left: 50%;
+  }
+}
+
+@keyframes slide-back{
+  from{
+    left:50%;
+  }
+  to{
+    left: 0;
+  }
+}
+
+/* media queries */
+@media(min-width:700px){
+  :root{
+    --background-image: url(./assets/background-desktop.png);
+  }
+
+  .light{
+    --background-image: url(./assets/background-light-desktop.png);
+  }
+
+  body{
+    background-image: var(--background-image);
+  }
+  
+}

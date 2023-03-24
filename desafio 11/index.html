@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles.css"/>
+  <title>Tela de Login</title>
+</head>
+<body>
+  <main>
+    <img src="./assets/logo.svg" width="160px" height="55px" alt="Logo Vertigo">
+    <div class="login">
+      <header>
+        <h1 class="title">Acesse a plataforma</h1>
+        <p>Faça login ou registre-se para começar a construir seus projetos ainda hoje.</p>
+      </header>
+      <form id="form">
+        <div class="input-fields">
+          <label for="email">E-mail</label>
+          <input id="email" type="email" placeholder="Digite seu e-mail"/>
+          <span id="error"></span>
+          <div class="input-password">
+            <label for="password">Senha</label>
+            <a href="#">Esqueceu a senha?</a>
+          </div>
+          <div class="input-icon">
+            <input id="password" type="password" placeholder="Digite sua senha"/>
+            <img onclick="changeImage()" id="icon-eye" src="./assets/eye-off.svg" width="20px" height="20px" alt=""/>
+          </div>
+        </div>
+        <button id="submit">Entrar</button>
+      </form>
+      <footer>
+        <span>
+          Ainda não tem uma conta?
+          <a href="#">Inscreva-se</a>
+        </span>
+      </footer>
+    </div>
+  </main>
+  <aside></aside>
+  <script src="./script.js"></script>
+</body>
+</html>
