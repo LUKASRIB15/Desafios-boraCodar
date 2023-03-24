@@ -31,6 +31,7 @@ function login(event){
     inputEmail.value = '';
     inputPassword.value = '';
   }
+  valid=true;
 }
 
 function changeImage(){
