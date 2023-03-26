@@ -1,0 +1,59 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  font-size: 62.5%;
+}
+
+body{
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  background-color: #7C3AED;
+  margin-top: 0.4rem;
+  display: grid;
+  grid-template-columns: 175px 1fr;
+}
+
+/* Kanban options */
+aside{
+  padding: 3.2rem 0 0 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+.options ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 3.6rem;
+}
+
+.options a{
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  text-decoration: none;
+  color: #CAB3FF;
+  transition: color 0.2s;
+}
+
+.options a:hover{
+  color: #FFFFFF;
+}
+
+#current-page{
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+/* Main KanBan*/
+main{
+  background-color: #FBFAFF;
+  height: 100vh;
+  border-radius: 3.2rem 0 0 0;
+}
