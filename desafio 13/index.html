@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Adicionar cartão</title>
+</head>
+<body>
+  <main>
+    <div class="content-form-card">
+      <form action="form-card">
+        <div id="child-1">
+          <label for="number-card">Número do cartão</label>
+          <input id="number-card" placeholder="**** **** **** ****" type="number">
+        </div>
+        <div id="child-2">
+          <label for="name">Nome do titular</label>
+          <input id="name" placeholder="Nome como está no cartão" type="text">
+        </div>
+        <div id="child-3">
+          <div class="child-3-1">
+            <label for="validity">Validade</label>
+            <input id="validity" placeholder="mm/aa" type="number">
+          </div>
+          <div class="child-3-2">
+            <label for="cvv">CVV</label>
+            <input id="cvv" placeholder="***" type="number">
+          </div>
+        </div>
+      </form>
+      <div class="credit-card">
+        <div class="card"></div>
+        <p>
+          <img src="./assets/security.svg" alt="Símbolo de segurança">
+          <span>Seus dados estão seguros</span>
+        </p>
+      </div>
+    </div>
+    <button id="form-card" type="submit">Adicionar cartão</button>
+  </main>
+</body>
+</html>
