@@ -120,6 +120,47 @@ input:focus{
   align-items: center;
 }
 
+.card .header-card{
+  padding: 1.6rem 2.4rem 4rem 2.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card .main-card{
+  padding: 0 2.4rem 2.4rem 2.4rem;
+  display: flex;
+  gap: 1.867rem;
+}
+
+.card .main-card #children-1,
+.card .main-card #children-2,
+.card .main-card #children-3,
+.card .main-card #children-4{
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 600;
+  font-size: 1.6rem;
+  opacity: 0.7;
+}
+
+.card .footer-card{
+  padding: 0 2.4rem 2.4rem 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 0.7;
+}
+
+.card .footer-card #footer-1{
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
 /* Style button */
 button{
   width: 100%;
@@ -131,5 +172,12 @@ button{
   color: #F9FAFB;
   font-size: 1.8rem;
   font-weight: 600;
+  box-shadow: 0px 4px 16px rgba(0,0,0,0.1);
+  transition: background-color 0.2s;
+}
+
+button:hover{
+  background-color: #A855F7;
+  cursor: pointer;
 }
 
