@@ -16,11 +16,16 @@
       <form action="form-card">
         <div id="child-1">
           <label for="number-card">Número do cartão</label>
-          <input id="number-card" placeholder="**** **** **** ****" type="number">
+          <input 
+            id="number-card" 
+            placeholder="**** **** **** ****"  
+            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+            maxlength="16"
+            type="number">
         </div>
         <div id="child-2">
-          <label for="name">Nome do titular</label>
-          <input id="name" placeholder="Nome como está no cartão" type="text">
+          <label for="name-user">Nome do titular</label>
+          <input id="name-user" placeholder="Nome como está no cartão" type="text">
         </div>
         <div id="child-3">
           <div class="child-3-1">
@@ -29,12 +34,59 @@
           </div>
           <div class="child-3-2">
             <label for="cvv">CVV</label>
-            <input id="cvv" placeholder="***" type="number">
+            <input 
+              id="cvv" 
+              placeholder="***"
+              oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+              maxlength="3" 
+              type="number"
+            >
           </div>
         </div>
       </form>
       <div class="credit-card">
-        <div class="card"></div>
+        <div class="card">
+          <header class="header-card">
+            <img id="image-card" src="" alt="">
+            <img src="./assets/iconCard.svg" alt="Ícone do cartão">
+          </header>
+          <div class="main-card">
+            <div id="children-1">
+              <div id="number-1">.</div>
+              <div id="number-2">.</div>
+              <div id="number-3">.</div>
+              <div id="number-4">.</div>
+            </div>
+            <div id="children-2">
+              <div id="number-5">.</div>
+              <div id="number-6">.</div>
+              <div id="number-7">.</div>
+              <div id="number-8">.</div>
+            </div>
+            <div id="children-3">
+              <div id="number-9">.</div>
+              <div id="number-10">.</div>
+              <div id="number-11">.</div>
+              <div id="number-12">.</div>
+            </div>
+            <div id="children-4">
+              <div id="number-13">.</div>
+              <div id="number-14">.</div>
+              <div id="number-15">.</div>
+              <div id="number-16">.</div>
+            </div>
+          </div>
+          <footer class="footer-card">
+            <span id="user">Seu nome aqui</span>
+            <div id="footer-1">
+              <div>.</div>
+              <div>.</div>
+              <div>/</div>
+              <div>.</div>
+              <div>.</div>
+            </div>
+          </footer>
+        </div>
         <p>
           <img src="./assets/security.svg" alt="Símbolo de segurança">
           <span>Seus dados estão seguros</span>
@@ -43,5 +95,6 @@
     </div>
     <button id="form-card" type="submit">Adicionar cartão</button>
   </main>
+  <script src="./script.js"></script>
 </body>
 </html>
