@@ -114,6 +114,21 @@ input:focus{
   border: 1px solid #374151;
 }
 
+.card-back{
+  width: 280px;
+  height: 168px;
+  border-radius: 16px;
+  background-color: #111827;
+  border: 1px solid #374151;
+  background-image: url(./assets/Background\ Blur.png);
+}
+
+.card-back header{
+  height: 32px;
+  background-color: #111827;
+  margin-top: 1.6rem;
+}
+
 .credit-card p{
   display: flex;
   gap: 0.8rem;
