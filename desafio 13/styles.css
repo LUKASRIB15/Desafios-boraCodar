@@ -10,189 +10,238 @@
 
 body{
   font-size: 1.6rem;
-  font-weight: 400;
   font-family: 'Source Sans Pro', sans-serif;
-  background-color: #111827;
-  color: #E5E7EB;
-
-  position: absolute;
-  top:50%;
-  left:50%;
-  transform: translate(-50%, -50%);
-}
-
-main{
   background-color: #1F2937;
-  border-radius: 8px;
-  border: 1px solid #374151;
-  padding: 3.2rem;
 }
-
-.content-form-card{
-  display: grid;
-  grid-template-columns: 328px 1fr;
-  gap: 6.4rem;
-}
-
-/* tooking out arrows of input number */
-input[type='number']::-webkit-outer-spin-button,
-input[type='number']::-webkit-inner-spin-button{
-  -webkit-appearance: none;
-  margin:0;
-}
-
-/* Style Form */
 
 form{
+  padding: 2.4rem;
+  max-width: 40rem;
+  margin: auto;
+}
+
+span{
+  color: #F9FAFB;
+  opacity: 0.5;
+}
+
+.flex{
   display: flex;
+}
+
+.opacity-1{
+  opacity: 1;
+}
+
+div.cvv{
+  background-color: #D1D5D8;
+  padding: 1.2rem;
+  align-items: center;
+  justify-content: flex-end;
+  height: 30px;
+  flex: 1;
+  border-radius: 4px;
+}
+/* Configurando o CSS do cartão */
+#credit-card{
+  width: 32.8rem;
+  height: 21.2rem;
+  perspective: 60rem;
+}
+
+/* a div herda de credit-card */
+#credit-card > div{
+  width: inherit;
+  height: inherit;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  transition: all .7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+#credit-card .front{
+  background-image: url(./assets/cardFront.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: rotateY(0);
+  border: 1px solid transparent;
+  position: relative;
+}
+
+#credit-card .back{
+  background-image: url(./assets/cardBack.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: rotateY(-180deg);
+  margin-top: -5px;
+}
+
+#credit-card:active .front,
+#credit-card:hover .front{
+  transform: rotateY(180deg);
+  cursor: pointer;
+}
+
+#credit-card:active .back,
+#credit-card:hover .back{
+  transform: rotateY(0deg);
+  cursor: pointer;
+}
+
+#credit-card .front .header-front{
+  margin: 2rem 2.375rem 0rem 2.375rem;
+  padding: 1.6rem 2.4rem 0rem 2.4rem;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+}
+
+#credit-card .front .main-front{
+  margin: 4.4rem 2.375rem 0rem 2.375rem;
+  padding: 0 2.4rem;
+  height: 10px;
+  align-items: center;
+  gap: 1.867rem;
+}
+
+#credit-card .front .footer-front{
+  margin: 2.8rem 2.375rem 0rem 2.375rem;
+  padding: 0 2.4rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#credit-card .back .main-back{
+  margin: 11.4rem 1.40rem 0rem 2.375rem;
+  padding: 0rem 2.4rem;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.color-holder{
+  color: #F3F4F6;
+  opacity: 1;
+}
+
+.block-numbers{
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.block-numbers div{
+  color: #F3F4F6;
+}
+
+.block-numbers-dark{
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.block-numbers-dark div{
+  color: #111827;
+}
+
+.block-numbers .block-null::before{
+  content: '';
+  display: block;
+  margin: 0.2rem;
+  width: 4px;
+  height: 4px;
+  background-color: #F9FAFB;
+  border-radius: 999px;
+  opacity: 0.5;
+}
+
+.block-numbers-dark .block-null-dark::before{
+  content: '';
+  display: block;
+  margin: 0.2rem;
+  width: 4px;
+  height: 4px;
+  background-color: #111827;
+  border-radius: 999px;
+  opacity: 0.5;
+}
+
+.bar::before{
+  content:"/";
+  color: #F9FAFB;
+  opacity: 0.5;
+  margin: 0rem 0.6rem;
+}
+
+/* Estilizando o Form */
+.inputs{
   flex-direction: column;
   gap: 2.4rem;
+  margin-top: 4.8rem;
 }
 
 label{
-  color: #E5E7EB;
   font-weight: 600;
   font-size: 1.4rem;
+  color: #E5E7EB;
+  gap: 0.4rem;
+  align-items: center;
 }
 
 input{
+  margin-top: 0.4rem;
+  width: 100%;
   padding: 1.2rem;
+  border: 0.1rem solid #374151;
   background-color: #111827;
-  color: #E5E7EB;
-  border: 1px solid #374151;
-  border-radius: 4px;
-}
-
-input::placeholder{
-  color: #9CA3AF;
+  border-radius: 0.4rem;
+  color: #F3F4F6;
 }
 
 input:focus{
   outline: 1.5px solid #9333EA;
 }
 
-#child-1, #child-2, #child-3{
-  display: flex;
-  gap: 0.4rem;
-}
-
-#child-1, #child-2{
-  flex-direction: column;
-}
-
-#child-3{
-  gap: 1.6rem;
-}
-
-#child-3 div{
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-
-#cvv{
- width: 100%;
-}
-
-/* Style Credit-card */
-
-.credit-card{
-  padding: 1.6rem 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3rem;
-}
-
-.credit-card .card{
-  width: 280px;
-  height: 168px;
-  border-radius: 16px;
-  background-color: #111827;
-  background-image: url(./assets/Background\ Blur.png);
-  backdrop-filter: blur(24px);
-  border: 1px solid #374151;
-}
-
-.card-back{
-  width: 280px;
-  height: 168px;
-  border-radius: 16px;
-  background-color: #111827;
-  border: 1px solid #374151;
-  background-image: url(./assets/Background\ Blur.png);
-}
-
-.card-back header{
-  height: 32px;
-  background-color: #111827;
-  margin-top: 1.6rem;
-}
-
-.credit-card p{
-  display: flex;
-  gap: 0.8rem;
+.col-2{
+  gap: 2.4rem;
   align-items: center;
 }
 
-.card .header-card{
-  padding: 1.6rem 2.4rem 4rem 2.4rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.col-2 .input-wrapper:nth-child(2){
+  flex-basis: 40%;
 }
 
-.card .main-card{
-  padding: 0 2.4rem 2.4rem 2.4rem;
-  display: flex;
-  gap: 1.867rem;
+.help img{
+  width: 1.6rem;
+  height: 1.6rem;
 }
 
-.card .main-card #children-1,
-.card .main-card #children-2,
-.card .main-card #children-3,
-.card .main-card #children-4{
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-weight: 600;
-  font-size: 1.6rem;
-  opacity: 0.7;
-}
-
-.card .footer-card{
-  padding: 0 2.4rem 2.4rem 2.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  opacity: 0.7;
-}
-
-.card .footer-card #footer-1{
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-weight: 600;
-  font-size: 1.6rem;
-}
-
-/* Style button */
-button{
-  width: 100%;
+.info-security{
   margin-top: 4.8rem;
-  padding: 1.6rem 4.8rem;
-  border-radius: 4px;
-  border: none;
-  background-color: #9333EA;
-  color: #F9FAFB;
-  font-size: 1.8rem;
+  justify-content: center;
+  gap: 0.8rem;
+  font-size: 1.4rem;
+  color: #E5E7EB;
+}
+
+button{
+  margin-top: 10rem;
+  border: 0;
+  padding: 1.6rem;
+  width: 100%;
+  background: #9333EA;
+  box-shadow: 0rem 0.4rem 1.6rem rgba(0,0,0,0.1);
+  border-radius: 0.4rem;
   font-weight: 600;
-  box-shadow: 0px 4px 16px rgba(0,0,0,0.1);
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  color: #F9FAFB;
+  cursor: pointer;
   transition: background-color 0.2s;
 }
 
 button:hover{
-  background-color: #A855F7;
-  cursor: pointer;
+  background: #A855F7;
 }
-

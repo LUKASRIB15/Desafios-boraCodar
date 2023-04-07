@@ -11,96 +11,116 @@
   <title>Adicionar cartão</title>
 </head>
 <body>
-  <main>
-    <div class="content-form-card">
-      <form action="form-card">
-        <div id="child-1">
-          <label for="number-card">Número do cartão</label>
-          <input 
-            id="number-card" 
-            placeholder="**** **** **** ****"  
-            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-            maxlength="16"
-            type="number">
-        </div>
-        <div id="child-2">
-          <label for="name-user">Nome do titular</label>
-          <input id="name-user" placeholder="Nome como está no cartão" type="text">
-        </div>
-        <div id="child-3">
-          <div class="child-3-1">
-            <label for="validity">Validade</label>
-            <input 
-              id="validity"
-              oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-              maxlength="4" 
-              placeholder="mm/aa" 
-              type="number">
+  <form >
+    <section id="credit-card">
+      <div class="front">
+        <header class="header-front flex">
+          <img id="image-card" src="" alt="">
+          <img src="./assets/iconCard.svg" alt="">
+        </header>
+        <main class="main-front flex">
+          <div class="block-numbers flex">
+            <div id="block-1" class="block-null"></div>
+            <div id="block-2" class="block-null"></div>
+            <div id="block-3" class="block-null"></div>
+            <div id="block-4" class="block-null"></div>
           </div>
-          <div class="child-3-2">
-            <label for="cvv">CVV</label>
-            <input 
-              id="cvv" 
-              placeholder="***"
-              oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-              maxlength="3" 
-              type="number"
-            >
+          <div class="block-numbers flex">
+            <div id="block-6" class="block-null"></div>
+            <div id="block-7" class="block-null"></div>
+            <div id="block-8" class="block-null"></div>
+            <div id="block-9" class="block-null"></div>
           </div>
-        </div>
-      </form>
-      <div class="credit-card">
-        <div id="card" class="card">
-          <header class="header-card">
-            <img id="image-card" src="" alt="">
-            <img src="./assets/iconCard.svg" alt="Ícone do cartão">
-          </header>
-          <div class="main-card">
-            <div id="children-1">
-              <div id="number-1">.</div>
-              <div id="number-2">.</div>
-              <div id="number-3">.</div>
-              <div id="number-4">.</div>
+          <div class="block-numbers flex">
+            <div id="block-11" class="block-null"></div>
+            <div id="block-12" class="block-null"></div>
+            <div id="block-13" class="block-null"></div>
+            <div id="block-14" class="block-null"></div>
+          </div>
+          <div class="block-numbers flex">
+            <div id="block-16" class="block-null"></div>
+            <div id="block-17" class="block-null"></div>
+            <div id="block-18" class="block-null"></div>
+            <div id="block-19" class="block-null"></div>
+          </div>
+        </main>
+        <footer class="footer-front flex">
+          <span id="name-holder" class="color-holder">Seu nome aqui</span>
+          <div class="block-validity flex">
+            <div class="block-numbers flex">
+              <div id="validity-1" class="block-null"></div>
+              <div id="validity-2" class="block-null"></div>
             </div>
-            <div id="children-2">
-              <div id="number-5">.</div>
-              <div id="number-6">.</div>
-              <div id="number-7">.</div>
-              <div id="number-8">.</div>
-            </div>
-            <div id="children-3">
-              <div id="number-9">.</div>
-              <div id="number-10">.</div>
-              <div id="number-11">.</div>
-              <div id="number-12">.</div>
-            </div>
-            <div id="children-4">
-              <div id="number-13">.</div>
-              <div id="number-14">.</div>
-              <div id="number-15">.</div>
-              <div id="number-16">.</div>
+            <div class="bar"></div>
+            <div class="block-numbers flex">
+              <div id="validity-4" class="block-null"></div>
+              <div id="validity-5" class="block-null"></div>
             </div>
           </div>
-          <footer class="footer-card">
-            <span id="user">Seu nome aqui</span>
-            <div id="footer-1">
-              <div id="footer-1-1">.</div>
-              <div id="footer-1-2">.</div>
-              <div>/</div>
-              <div id="footer-1-3">.</div>
-              <div id="footer-1-4">.</div>
-            </div>
-          </footer>
-        </div>
-        <p>
-          <img src="./assets/security.svg" alt="Símbolo de segurança">
-          <span>Seus dados estão seguros</span>
-        </p>
+        </footer>
       </div>
-    </div>
-    <button id="form-card" type="submit">Adicionar cartão</button>
-  </main>
+      <div class="back">
+        <main class="main-back flex">
+          <div class="block-numbers-dark cvv flex">
+            <div id="cvv-1" class="block-null-dark"></div>
+            <div id="cvv-2" class="block-null-dark"></div>
+            <div id="cvv-3" class="block-null-dark"></div>
+          </div>
+          <span class="opacity-1">CVV</span>
+        </main>
+      </div>
+    </section>
+    <section class="inputs flex">
+      <div class="input-wrapper">
+        <label for="cc-number">Número do cartão</label>
+        <input 
+          type="text" 
+          id="cc-number"
+          placeholder="**** **** **** ****"
+        >
+      </div>
+      <div class="input-wrapper">
+        <label for="cc-holder">Nome do titular</label>
+        <input
+          type="text"
+          id="cc-holder"
+          placeholder="Nome como está no cartão"
+        >
+      </div>
+      <div class="col-2 flex">
+        <div class="input-wrapper">
+          <label for="cc-validity">Validade</label>
+          <input
+            id="cc-validity"
+            type="text"
+            placeholder="mm/aa"
+          >
+        </div>
+        <div class="input-wrapper">
+          <label class="flex help" for="cc-cvv">
+            CVV
+            <img 
+              src="./assets/question.svg" 
+              alt="ícone de ajuda"
+              title="Esse número está nas costas do seu cartão"
+            >
+          </label>
+          <input
+            class="cvv"
+            id="cc-cvv"
+            type="text"
+            placeholder="***"
+          >
+        </div>
+      </div>
+    </section>
+    <section class="info-security flex">
+      <img src="./assets/security.svg" alt="ícone de segurança">
+      Seus dados estão seguros
+    </section>
+    <button type="submit">Adicionar cartão</button>
+  </form>
+  <script src="https://unpkg.com/imask"></script> 
   <script src="./script.js"></script>
-  
 </body>
 </html>
