@@ -1,142 +1,151 @@
-var numberCard = document.querySelector('#number-card')
-var nameUser = document.querySelector('#name-user')
-var validity = document.querySelector('#validity')
-var cvv = document.querySelector('#cvv')
-var imagesCards = [
-  "./assets/visa.svg",
-  "./assets/mastercard.svg",
-  "./assets/elo.svg",
-]
-var mainCard = document.querySelector('.main-card')
-let brandCard;
-numberCard.addEventListener('input', function(event){
+var elementNumber = document.getElementById("cc-number");
+var elementCvv = document.getElementById("cc-cvv");
+var elementValidity = document.getElementById("cc-validity");
+var elementHolder = document.getElementById("cc-holder");
+
+var maskOptions = {
+  maskNumber: '0000 0000 0000 0000',
+  maskCvv: '000',
+  maskValidity: "MM{/}YY",
+}
+
+//Input numberCard
+IMask(elementNumber, {
+  mask: maskOptions.maskNumber
+})
+
+//Input Cvv
+IMask(elementCvv, {
+  mask: maskOptions.maskCvv
+})
+
+//Input Validity
+IMask(elementValidity, {
+  mask: maskOptions.maskValidity,
+  blocks: {
+    MM: {
+      mask: IMask.MaskedRange,
+      from: 1,
+      to: 12,
+    },
+    YY: {
+      mask: IMask.MaskedRange,
+      from: String(new Date().getFullYear()).slice(2),
+      to: String(new Date().getFullYear() + 10).slice(2)
+    }
+  }
+})
+
+var brandCard = {
+  masterCard: "./assets/mastercard.svg",
+  visa: "./assets/visa.svg",
+  elo: "./assets/elo.svg"
+}
+
+// Ver em tempo real o valor do input elementNumber e executar funções
+elementNumber.addEventListener('input', function(event){
+  console.log(event.target.value);
+  verifyBrand()
+  numberCard() 
+})
+
+// Ver em tempo real o valor do input elementHolder e executar funções
+elementHolder.addEventListener('input', function(event){
+  console.log(event.target.value);
+  nameHolder()
+})
+
+// Ver em tempo real o valor do input elementValidity e executar funções
+elementValidity.addEventListener('input', function(event){
   console.log(event.target.value)
-  for(var i=0; i<16; i++){
-    //Mostrar número aovivo no cartão
-    if(numberCard.value[i]!=null){
-      document.getElementById(`number-${i+1}`).innerHTML= numberCard.value[i];
-    }else{
-      document.getElementById(`number-${i+1}`).innerHTML= '.';
+  numberValidity()
+})
+
+// Ver em tempo real o valor do input elementCvv e executar funções
+elementCvv.addEventListener('input', function(event){
+  console.log(event.target.value)
+  numberCvv();
+})
+
+// Verifica qual a marca do cartão baseado no número
+function verifyBrand(){
+  if(elementNumber.value[18] != null){
+    if(elementNumber.value[0] == '4'){
+      document.getElementById("image-card").src = brandCard.visa;
     }
-    if(numberCard.value[15]!=null){
-      //Cartão Visa
-    if(numberCard.value[0]=='4'){
-      document.getElementById('image-card').src = imagesCards[0];
-    }
-    //Cartão MasterCard
-    if(numberCard.value[0]=='5'){
-      if(i==1){
-        switch(numberCard.value[i]){
-          case '1':
-            document.getElementById('image-card').src = imagesCards[1];
-            break;
-          case '2':
-            document.getElementById('image-card').src = imagesCards[1];
-            break;
-          case '3':
-            document.getElementById('image-card').src = imagesCards[1];
-            break;
-          case '4':
-            document.getElementById('image-card').src = imagesCards[1];
-            break;
-          case '5':
-            document.getElementById('image-card').src = imagesCards[1];
-            break;
-          default:
-            document.getElementById('image-card').src = imagesCards[2];
-            break;
+    if(elementNumber.value[0] == '5'){
+      if(
+          elementNumber.value.slice(0,2) == "51" ||
+          elementNumber.value.slice(0,2) == "52" ||
+          elementNumber.value.slice(0,2) == "53" ||
+          elementNumber.value.slice(0,2) == "54" ||
+          elementNumber.value.slice(0,2) == "55"
+        ){
+          document.getElementById("image-card").src= brandCard.masterCard;
+        }else{
+          document.getElementById("image-card").src = brandCard.elo;
         }
-      }
     }
-    //Cartão Elo
-    if(numberCard.value[0]=='6'){
-      document.getElementById('image-card').src = imagesCards[2];
+    if(elementNumber.value[0] == '6'){
+      document.getElementById("image-card").src = brandCard.elo;
     }
-    }else{
-      //Sem cartão
-      document.getElementById('image-card').src = '';
-    }
-  }
-}, false)
-
-
-nameUser.addEventListener('input', function(event){
-  console.log(event.target.value)
-  if(nameUser.value[0]!=null){
-    document.getElementById('user').innerHTML = nameUser.value;
   }else{
-    document.getElementById('user').innerHTML = "Seu nome aqui"
+    document.getElementById("image-card").src = ""
   }
-}, false)
+}
 
-validity.addEventListener('input', function(event){
-  console.log(event.target.value)
-  for(var i=0; i<4; i++){
-    //Mostar número de validade
-    if(validity.value[i]!=null){
-      document.getElementById(`footer-1-${i+1}`).innerHTML = validity.value[i];
+// Conectando os valores do input cc-number com o cartão virtual
+function numberCard(){
+  for(var i=0; i<19; i++){
+    if(elementNumber.value[i] != null){
+      document.getElementById(`block-${i+1}`).innerHTML = elementNumber.value[i];
+      document.getElementById(`block-${i+1}`).classList.remove("block-null");
     }else{
-      document.getElementById(`footer-1-${i+1}`).innerHTML = '.'
+      document.getElementById(`block-${i+1}`).innerHTML = "";
+      document.getElementById(`block-${i+1}`).classList.add("block-null");
+    }
+    if(elementNumber.value[i+1] == ' '){
+      i++;
     }
   }
-}, false)
+}
 
-var card = document.getElementById('card')
-cvv.addEventListener('input', function(event){
-  console.log(event.target.value)
-  if(cvv.value[0] != null){
-    card.classList.add('card-back');
-    card.classList.remove('card');
-    document.getElementById('card').innerHTML = `<header></header>`
+// Conectando os valores do input cc-holder com o cartão virtual
+function nameHolder(){
+  if(elementHolder.value[0] != null){
+    document.getElementById("name-holder").innerHTML = elementHolder.value;
+    document.getElementById("name-holder").classList.add('color-holder');
   }else{
-    card.classList.add('card');
-    card.classList.remove('card-back');
-    document.getElementById('card').innerHTML = `<header class="header-card">
-    <img id="image-card" src="" alt="">
-    <img src="./assets/iconCard.svg" alt="Ícone do cartão">
-  </header>
-  <div class="main-card">
-    <div id="children-1">
-      <div id="number-1">${numberCard.value[0]!=null? numberCard.value[0] : `.` }</div>
-      <div id="number-2">.</div>
-      <div id="number-3">.</div>
-      <div id="number-4">.</div>
-    </div>
-    <div id="children-2">
-      <div id="number-5">.</div>
-      <div id="number-6">.</div>
-      <div id="number-7">.</div>
-      <div id="number-8">.</div>
-    </div>
-    <div id="children-3">
-      <div id="number-9">.</div>
-      <div id="number-10">.</div>
-      <div id="number-11">.</div>
-      <div id="number-12">.</div>
-    </div>
-    <div id="children-4">
-      <div id="number-13">.</div>
-      <div id="number-14">.</div>
-      <div id="number-15">.</div>
-      <div id="number-16">.</div>
-    </div>
-  </div>
-  <footer class="footer-card">
-    <span id="user">${
-      (nameUser.value[0] != null) ?
-        nameUser.value
-      :
-        `Seu nome aqui`
-    }</span>
-    <div id="footer-1">
-      <div id="footer-1-1">.</div>
-      <div id="footer-1-2">.</div>
-      <div>/</div>
-      <div id="footer-1-3">.</div>
-      <div id="footer-1-4">.</div>
-    </div>
-  </footer>   
-    `
+    document.getElementById("name-holder").innerHTML = "Seu nome aqui"
+    document.getElementById("name-holder").classList.remove('color-holder');
   }
-}, false)
+}
+
+// Conectando os valores do input cc-validity com o cartão virtual
+function numberValidity(){
+  for(var i=0; i<5; i++){
+    if(elementValidity.value[i] == '/'){
+      continue;
+    }
+    if(elementValidity.value[i] != null){
+      document.getElementById(`validity-${i+1}`).innerHTML = elementValidity.value[i];
+      document.getElementById(`validity-${i+1}`).classList.remove("block-null");
+    }else{
+      document.getElementById(`validity-${i+1}`).innerHTML = "";
+      document.getElementById(`validity-${i+1}`).classList.add("block-null");
+    }
+  }
+}
+
+function numberCvv(){
+  for(var i=0; i<3; i++){
+    if(elementCvv.value[i] != null){
+      document.getElementById(`cvv-${i+1}`).innerHTML = elementCvv.value[i];
+      document.getElementById(`cvv-${i+1}`).classList.remove("block-null-dark");
+    }else{
+      document.getElementById(`cvv-${i+1}`).innerHTML = "";
+      document.getElementById(`cvv-${i+1}`).classList.add("block-null-dark");
+    }
+  }
+}
 
