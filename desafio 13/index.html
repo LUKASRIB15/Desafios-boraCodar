@@ -11,7 +11,7 @@
   <title>Adicionar cartão</title>
 </head>
 <body>
-  <form >
+  <form>
     <section id="credit-card">
       <div class="front">
         <header class="header-front flex">
@@ -78,6 +78,7 @@
           id="cc-number"
           placeholder="**** **** **** ****"
         >
+        <div id="message-error" class="flex"></div>
       </div>
       <div class="input-wrapper">
         <label for="cc-holder">Nome do titular</label>
@@ -118,7 +119,7 @@
       <img src="./assets/security.svg" alt="ícone de segurança">
       Seus dados estão seguros
     </section>
-    <button type="submit">Adicionar cartão</button>
+    <button disabled id="submit" class="flex" type="submit">Adicionar cartão</button>
   </form>
   <script src="https://unpkg.com/imask"></script> 
   <script src="./script.js"></script>

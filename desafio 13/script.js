@@ -2,6 +2,8 @@ var elementNumber = document.getElementById("cc-number");
 var elementCvv = document.getElementById("cc-cvv");
 var elementValidity = document.getElementById("cc-validity");
 var elementHolder = document.getElementById("cc-holder");
+var submit = document.getElementById("submit")
+let currentBrand;
 
 var maskOptions = {
   maskNumber: '0000 0000 0000 0000',
@@ -72,6 +74,7 @@ function verifyBrand(){
   if(elementNumber.value[18] != null){
     if(elementNumber.value[0] == '4'){
       document.getElementById("image-card").src = brandCard.visa;
+      currentBrand = 1;
     }
     if(elementNumber.value[0] == '5'){
       if(
@@ -82,15 +85,19 @@ function verifyBrand(){
           elementNumber.value.slice(0,2) == "55"
         ){
           document.getElementById("image-card").src= brandCard.masterCard;
+          currentBrand = 1;
         }else{
           document.getElementById("image-card").src = brandCard.elo;
+          currentBrand = 1;
         }
     }
     if(elementNumber.value[0] == '6'){
       document.getElementById("image-card").src = brandCard.elo;
+      currentBrand = 1;
     }
   }else{
     document.getElementById("image-card").src = ""
+    currentBrand = 0;
   }
 }
 
@@ -137,6 +144,7 @@ function numberValidity(){
   }
 }
 
+// Conectando os valores do input cc-cvv com o cartão virtuala
 function numberCvv(){
   for(var i=0; i<3; i++){
     if(elementCvv.value[i] != null){
@@ -148,4 +156,55 @@ function numberCvv(){
     }
   }
 }
+
+// Toda vez que clicar no botão com id submit, ele irá ser direcionado à função validationForm
+submit.addEventListener('click', validationForm)
+
+// Função que mostra resposta de erro durante um submit de informações
+// Erro do número de cartão, caso seja inválido
+function validationForm(event){
+  event.preventDefault()
+  submit.innerHTML = `<img id="loading" src="./assets/loading.svg" alt="ícone de loading">`
+  setTimeout(()=>{
+    submit.innerHTML = "Adicionar cartão"
+    if(elementNumber.value[18] == null || !currentBrand){
+      elementNumber.classList.add('is-invalid')
+      document.getElementById('message-error').innerHTML = `
+      <img src="./assets/error.svg" alt="ícone de error">
+      Insira um número de cartão válido
+      `
+      setTimeout(()=>{
+        elementNumber.classList.remove('is-invalid')
+        document.getElementById('message-error').innerHTML = '' 
+      }, 3000)
+    }
+  }, 3000)
+}
+
+// Função que checa se os inputs estão vazios ou não
+function checkInputs(inputs){
+  var full = true;
+  
+  inputs.forEach(function(input){
+    if(input.value === ""){
+      full = false
+    }
+  })
+  return full;
+}
+
+var inputs = document.querySelectorAll("input");
+var button = document.querySelector("button")
+
+// Se algum input estiver vazio então ele deixa o button desabilitado
+// Caso todos estejam com algum valor, ele habilita o input
+inputs.forEach(function(input){
+  input.addEventListener("keyup", function(){
+    if(checkInputs(inputs)){
+      button.disabled = false;
+    }else{
+      button.disabled = true;
+    }
+  })
+})
 

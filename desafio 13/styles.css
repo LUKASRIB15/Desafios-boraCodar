@@ -47,6 +47,7 @@ div.cvv{
   width: 32.8rem;
   height: 21.2rem;
   perspective: 60rem;
+  grid-area: creditCard;
 }
 
 /* a div herda de credit-card */
@@ -180,6 +181,7 @@ div.cvv{
   flex-direction: column;
   gap: 2.4rem;
   margin-top: 4.8rem;
+  grid-area: formInputs;
 }
 
 label{
@@ -224,6 +226,7 @@ input:focus{
   gap: 0.8rem;
   font-size: 1.4rem;
   color: #E5E7EB;
+  grid-area: info;
 }
 
 button{
@@ -240,8 +243,92 @@ button{
   color: #F9FAFB;
   cursor: pointer;
   transition: background-color 0.2s;
+
+  align-items: center;
+  justify-content: center;
+  grid-area: buttonCard;
 }
 
-button:hover{
+button:not(:disabled):not(:focus):hover{
   background: #A855F7;
+  cursor: pointer;
+}
+
+button:disabled{
+  background-color: #9333EA;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button:focus{
+  border-top: 0.8rem solid #1F2937;
+  border-bottom: 0.8rem solid #1F2937;
+  border-left: 0.5rem solid #1F2937;
+  border-right: 0.5rem solid #1F2937;
+  outline: 2px solid #F9FAFB;
+}
+
+.is-invalid{
+  outline: 1.5px solid #FB7185;
+}
+
+#message-error{
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.8rem;
+  font-size: 1.4rem;
+  color: #FB7185;
+}
+
+#loading{
+  animation: loading 2s infinite;
+}
+
+@keyframes loading{
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+@media(min-width: 736px){
+  body{
+    background-color: #111827;
+  }
+
+  form{
+    display: grid;
+    grid-template-columns: repeat(2, 32.8rem);
+    grid-template-areas: 
+      "formInputs creditCard"
+      "formInputs info"
+      "buttonCard buttonCard"
+    ;
+    column-gap: 6.4rem;
+    row-gap: 3.2rem;
+    background-color: #1F2937;
+    max-width: max-content;
+    border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #374151;
+  }
+
+  button{
+    margin-top: 3.2rem;
+  }
+
+  .info-security{
+    margin-top: -6.4rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .inputs{
+    margin-top: 0rem;
+  }
 }
