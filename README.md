@@ -31,6 +31,7 @@ Você pode acessar as páginas do DevLinks e os desafios pelos seguintes links:
   <li><a href="https://lukasrib15.github.io/Desafios-boraCodar/desafio%2011/">Desafio 11</a></li>
   <li><a href="https://lukasrib15.github.io/Desafios-boraCodar/desafio%2012/">Desafio 12</a></li>
   <li><a href="https://lukasrib15.github.io/Desafios-boraCodar/desafio%2013/">Desafio 13</a></li>
+  <li><a href="https://lukasrib15.github.io/Desafios-boraCodar/desafio%2014/">Desafio 14</a></li>
 </ul>
 
 <p>Obs: Essa lista será atualizada a cada desafio concluído!<p>
@@ -72,5 +73,10 @@ Desafio 12:  Feito com HTML, CSS e JavaScript (Drag and Drop)
 Desafio 13: Feito com HTML, CSS (Flip do cartão), JavaScript e IMaskJs
 
 ![Alt text](assetsScreens/desafio-13.png)
+
+<br>
+Desafio 14: Feito com HTML, CSS, JavaScript (Drag and Drop)
+
+![Alt text](assetsScreens/desafio-14.png)
 
 

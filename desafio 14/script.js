@@ -7,8 +7,36 @@ const typeFile = {
 }
 fileInput.addEventListener("change", function(event){
   const file = event.target.files[0];
-  const reader = new FileReader();
+  createElementsAndAtributtes(file)
+})
 
+// drag and drop
+const dropzone = document.querySelector(".file-label")
+
+dropzone.addEventListener("dragenter", ()=>{
+  dropzone.classList.add("is-dragover")
+})
+
+dropzone.addEventListener("dragover", (event)=>{
+  event.preventDefault()
+  dropzone.classList.add("is-dragover")
+})
+
+dropzone.addEventListener("dragleave", ()=>{
+  dropzone.classList.remove("is-dragover")
+})
+
+dropzone.addEventListener("drop", (event)=>{
+  event.preventDefault()
+  const file = event.dataTransfer.files[0]
+  const inputFile = document.getElementById('file-input')
+  inputFile.files = event.dataTransfer.files;
+  createElementsAndAtributtes(file)
+  dropzone.classList.remove("is-dragover")
+})
+
+function createElementsAndAtributtes(file){
+  const reader = new FileReader();
   console.log("tamanho do arquivo: ", ((Math.round((Math.random() * (Math.round((file.size/1024/1024)*100))/100)*100)/100))) 
   var sizeInProgress = ((Math.round((Math.random() * (Math.round((file.size/1024/1024)*100))/100)*100)/100))
   var sizeTotal = (Math.round((file.size/1024/1024)*100))/100
@@ -76,7 +104,4 @@ fileInput.addEventListener("change", function(event){
   }
 
   reader.readAsDataURL(file)
-})
-
-// drag and drop
-
+}
