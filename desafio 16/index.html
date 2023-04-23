@@ -10,15 +10,21 @@
   <link rel="stylesheet" href="./styles.css">
   <title>Lista de contatos</title>
 </head>
-<body>
+<body id="body-field">
   <main class="contentList">
     <header>
       <header class="configContacts">
         <h2>Meus contatos</h2>
         <div class="options">
-          <img src="./assets/add.svg" alt="ícone de adicionar contato">
-          <img src="./assets/edit.svg" alt="ícone de editar contato">
-          <img src="./assets/remove.svg" alt="ícone de remover contato">
+          <button id="open-modal">
+            <img src="./assets/add.svg" alt="ícone de adicionar contato">
+          </button>
+          <button>
+            <img src="./assets/edit.svg" title="Não funciona no momento" alt="ícone de editar contato">
+          </button>
+          <button>
+            <img src="./assets/remove.svg" title="Não funciona no momento" alt="ícone de remover contato">
+          </button>
         </div>
       </header>
       <main class="searchContacts">
@@ -27,64 +33,25 @@
       </main>
     </header>
     <main class="contacts">
-      <div class="contact">
-        <div class="letra">L</div>
-        <div id="listContacts">
-          <div class="infoContact">
-            <img width="48px" height="48px" src="https://github.com/LUKASRIB15.png">
-            <div>
-              <strong>Lucas Ribeiro</strong>
-              <span>(88)99999-9999</span>
-            </div>
-          </div>
-          <div class="infoContact">
-            <img width="48px" height="48px" src="https://github.com/LUKASRIB15.png">
-            <div>
-              <strong>Lucas Ribeiro</strong>
-              <span>(88)99999-9999</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="contact">
-        <div class="letra">L</div>
-        <div id="listContacts">
-          <div class="infoContact">
-            <img width="48px" height="48px" src="https://github.com/LUKASRIB15.png">
-            <div>
-              <strong>Lucas Ribeiro</strong>
-              <span>(88)99999-9999</span>
-            </div>
-          </div>
-          <div class="infoContact">
-            <img width="48px" height="48px" src="https://github.com/LUKASRIB15.png">
-            <div>
-              <strong>Lucas Ribeiro</strong>
-              <span>(88)99999-9999</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="contact">
-        <div class="letra">L</div>
-        <div id="listContacts">
-          <div class="infoContact">
-            <img width="48px" height="48px" src="https://github.com/LUKASRIB15.png">
-            <div>
-              <strong>Lucas Ribeiro</strong>
-              <span>(88)99999-9999</span>
-            </div>
-          </div>
-          <div class="infoContact">
-            <img width="48px" height="48px" src="https://github.com/LUKASRIB15.png">
-            <div>
-              <strong>Lucas Ribeiro</strong>
-              <span>(88)99999-9999</span>
-            </div>
-          </div>
-        </div>
-      </div>
     </main>
   </main>
+  <div id="containModal" class="modal">
+    <button id="close-modal">
+      <span>&times;</span>
+    </button>
+    <header>
+      <h2>Adicione as informações</h2>
+    </header>
+    <form>
+      <input type="text" id="input-link" required placeholder="Link da foto do github">
+      <input type="text" id="input-name" required placeholder="Nome do contato">
+      <input type="text" id="input-number" required placeholder="Número do contato">
+      <footer>
+        <button id="button-send" type="submit">Enviar</button>
+      </footer>
+    </form>
+  </div>
+  <script src="https://unpkg.com/imask"></script> 
+  <script src="./script.js"></script>
 </body>
 </html>
