@@ -20,6 +20,19 @@ body, input, textarea, button{
   font-family: 'Roboto', sans-serif;
 }
 
+button{
+  background-color: transparent;
+  border: none;
+}
+
+h2{
+  font-size: 2rem;
+}
+
+input + input{
+  margin-top: 1.6rem;
+}
+
 /* Block list of contacts*/
 .contentList{
   background-color: #1A1924;
@@ -41,10 +54,6 @@ body, input, textarea, button{
   align-items: center;
   justify-content: space-between;
   margin-bottom: 2.45rem;
-}
-
-.configContacts h2{
-  font-size: 2rem;
 }
 
 .options{
@@ -99,11 +108,11 @@ body, input, textarea, button{
   margin-top: 5.6rem;
 }
 
-.contact .letra{
+.contact .letter{
   padding: 1.6rem 2rem;
   border-radius: 8px;
-  font-size: bold;
-  background-color: #633BBC;
+  font-weight: bold;
+  /*background-color: #633BBC;*/
 }
 
 .infoContact{
@@ -142,4 +151,96 @@ body, input, textarea, button{
 ::-webkit-scrollbar-thumb{
   background-color: #282843;
   border-radius: 999px;
+}
+
+/* Style Modal */
+.modal{
+  border-radius: 8px;
+  padding: 4rem;
+  background-color: #16151E;
+  width: 450px;
+  position: absolute;
+  top: 30%;
+  left: 82%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+.modal header{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.modal span{
+  position: absolute;
+  font-size: 3rem;
+  right: 2.4rem;
+  top:1.6rem;
+  color: #E1E1E6;
+}
+
+#input-link,
+#input-name,
+#input-number{
+  width: 100%;
+  padding: 1.6rem 2.4rem 1.6rem 2.4rem;
+  color: #FFFFFF;
+  background-color: #24243D;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+
+#input-link:focus,
+#input-name:focus,
+#input-number:focus{
+  outline: 1px solid #FFFFFF;
+}
+
+#input-link::placeholder,
+#input-name::placeholder,
+#input-number::placeholder{
+  color: #E1E1E6;
+}
+
+.open{
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal footer{
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#button-send{
+  font-size: 2rem;
+  font-weight: bold;
+  color: #E1E1E6;
+  background: #633BBC;
+  padding: 1.6rem 2.4rem;
+  border-radius: 8px;
+  width: 90%;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+#button-send:hover{
+  background-color: #7B56CE;
+  transform: scale(1.12);
+}
+
+/* Resposive screen*/
+@media(max-width: 1020px){
+  .modal{
+    top: 50%;
+    left: 50%;
+  }
 }
