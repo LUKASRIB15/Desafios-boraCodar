@@ -26,6 +26,7 @@ Você pode acessar as páginas do DevLinks e os desafios pelos seguintes links:
   <li><a href="https://lukasrib15.github.io/Desafios-boraCodar/devlinks/">DevLinks</a></li>
   <li><a href="https://lukasrib15.github.io/Desafios-boraCodar/desafio%201/">Desafio 1</a></li>
   <li><a href="https://lukasrib15.github.io/Desafios-boraCodar/desafio%202/">Desafio 2</a></li>
+  <li><a href="https://lukasrib15.github.io/Desafios-boraCodar/desafio%208/">Desafio 8</a></li>
   <li><a href="https://lukasrib15.github.io/Desafios-boraCodar/desafio%209/">Desafio 9</a></li>
   <li><a href="https://lukasrib15.github.io/Desafios-boraCodar/desafio%2010/">Desafio 10</a></li>
   <li><a href="https://lukasrib15.github.io/Desafios-boraCodar/desafio%2011/">Desafio 11</a></li>
@@ -50,6 +51,11 @@ Desafio 1: Feito com HTML e CSS
 Desafio 2: Feito com HTML, CSS e JavaScript
 
 ![Alt text](assetsScreens/desafio-2.png)
+
+<br>
+Desafio 8 : Feito com HTML e CSS (Donut Chart e Animations)
+
+![Alt text](assetsScreens/desafio-8.png)
 
 <br>
 Desafio 9: Feito com HTML, CSS, JavaScript e ApexCharts
