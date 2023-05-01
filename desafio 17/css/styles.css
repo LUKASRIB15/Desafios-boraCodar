@@ -1,0 +1,94 @@
+@charset "UTF-8";
+#container-date-picker {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: -moz-max-content;
+  width: max-content;
+  margin: auto;
+  height: -moz-max-content;
+  height: max-content;
+  border-radius: 16px;
+  padding: 3.2rem;
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.16);
+}
+
+#container-date-picker header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 2.4rem;
+}
+
+#container-date-picker button {
+  background-color: transparent;
+  border: none;
+}
+
+.contain-month {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  -moz-column-gap: 1.7rem;
+       column-gap: 1.7rem;
+  row-gap: 1.6rem;
+}
+
+.month {
+  width: 8.2rem;
+  padding: 1.2rem 1.6rem;
+  border-radius: 8px;
+  text-align: center;
+  color: #666666;
+  transition: background 0.2s;
+}
+
+.month:hover {
+  background-color: #ECE0FD;
+  cursor: pointer;
+}
+
+.current {
+  width: 8.2rem;
+  background-color: #6200EE;
+  color: #FFFFFF;
+  font-weight: bold;
+  padding: 1.2rem 1.6rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: background 0.2s;
+  position: relative;
+}
+
+.current::after {
+  content: "•";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-130%, 70%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #F5F5F5;
+  color: #333333;
+}
+
+body, input, textarea, button {
+  font-family: "Lato", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+}/*# sourceMappingURL=styles.css.map */

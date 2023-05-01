@@ -1,0 +1,78 @@
+@import 'colors';
+
+@mixin addBoxShadow($r,$g,$b,$a){
+  box-shadow: 0px 8px 32px rgba($r,$g,$b,$a);
+}
+
+#container-date-picker{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  width: max-content;
+  margin: auto;
+  height: max-content;
+  border-radius: 16px;
+  padding: 3.2rem;
+  @include addBoxShadow(0,0,0,0.16);
+}
+
+#container-date-picker header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 2.4rem;
+}
+
+#container-date-picker button{
+  background-color: transparent;
+  border: none;
+}
+
+.contain-month{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1.7rem;
+  row-gap: 1.6rem;
+}
+
+.month{
+  width: 8.2rem;
+  padding: 1.2rem 1.6rem;
+  border-radius: 8px;
+  text-align: center;
+  color: $gray-400;
+  transition: background 0.2s;
+}
+
+.month:hover{
+  background-color: $gray-200;
+  cursor: pointer;
+}
+
+.current{
+  width: 8.2rem;
+  background-color: $purple;
+  color: $white;
+  font-weight: bold;
+  padding: 1.2rem 1.6rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: background 0.2s;
+  position: relative;
+}
+
+.current::after{
+  content: "\2022";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-130%, 70%);
+}
+
+
+
