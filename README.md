@@ -36,6 +36,7 @@ Você pode acessar as páginas do DevLinks e os desafios pelos seguintes links:
   <li><a href="https://lukasrib15.github.io/Desafios-boraCodar/desafio%2015/">Desafio 15</a></li>
   <li><a href="https://lukasrib15.github.io/Desafios-boraCodar/desafio%2016/">Desafio 16</a></li>
   <li><a href="https://lukasrib15.github.io/Desafios-boraCodar/desafio%2017/">Desafio 17</a></li>
+  <li><a href="https://lukasrib15.github.io/Desafios-boraCodar/desafio%2018/">Desafio 18</a></li>
 </ul>
 
 <p>Obs: Essa lista será atualizada a cada desafio concluído!<p>
@@ -102,3 +103,8 @@ Desafio 16: Feito com HTML, CSS, JavaScript e IMaskJs
 Desafio 17: Feito com HTML, Sass e JavaScript
 
 ![Alt text](assetsScreens/desafio-17.png)
+
+<br>
+Desafio 18: Feito com HTML e CSS (Apenas versão desktop)
+
+![Alt text](assetsScreens/desafio-18.png)
