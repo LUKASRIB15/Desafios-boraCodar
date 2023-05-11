@@ -1,0 +1,23 @@
+@import 'colors';
+@import 'widget';
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  font-size: 62.5%;
+}
+
+body{
+  color: $text-color;
+  background-color: $white;
+}
+
+body, input, textarea, button{
+  font-size: 1.6rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
