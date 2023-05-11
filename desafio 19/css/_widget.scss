@@ -1,0 +1,143 @@
+@mixin addBoxShadow($r,$g,$b,$a){
+  box-shadow: 0px 3px 32px 10px rgba($r,$g,$b,$a);
+}
+
+.widget{
+  width: 795px;
+  height: 689px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 40px;
+  @include addBoxShadow(0,0,0,0.16);
+  padding: 2.4rem 5.6rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 9.9rem;
+}
+
+.top-bar{
+  background-color: $frame-color;
+  width: 168px;
+  height: 17px;
+  border-radius: 999px;
+  margin: 0 auto;
+}
+
+/* Header of Widget*/
+
+.header-widget {
+  text-align: left;
+
+  h2{
+    font-size: 4rem;
+  }
+
+  p{
+    font-size: 2.5rem;
+  }
+  
+  strong{
+    color: $text-strong;
+  }
+}
+
+
+/* Main of Widget */
+.main-widget{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#info-driver{
+  position: relative;
+}
+
+
+.image-star-driver{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: max-content;
+
+  img{
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  span{
+    background-color: $text-color;
+    color: $white-100;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.98rem;
+    width: max-content;
+    padding: 0.6rem 2.3rem;
+    border-radius: 15px;
+    font-size: 1.9rem;
+    margin-bottom: 0.6rem;
+    margin-top: -2rem;
+    z-index: 1;
+  }
+
+  strong{
+    font-size: 1.8rem;
+  }
+}
+
+#car-image{
+  position: absolute;
+  top: 3rem;
+  left: 9.2rem;
+}
+
+#info-car{
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: start;
+  strong{
+    font-size: 4.1rem;
+  }
+
+  span{
+    font-size: 2.4rem;
+  }
+
+}
+
+/* Footer of Widget */
+
+.footer-widget{
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+
+  input{
+    flex: 1;
+    color: $text-color;
+    background-color: $gray;
+    font-size: 2.4rem;
+    border-radius: 24px;
+    padding: 1.7rem 2.9rem;
+    border: 0;
+    
+    &:focus{
+      outline: 2px solid $text-color;
+    }
+
+    &::placeholder{
+      color: $text-color;
+    }
+  }
+
+  div{
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+  }
+}

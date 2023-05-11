@@ -1,0 +1,148 @@
+.widget {
+  width: 795px;
+  height: 689px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 40px;
+  box-shadow: 0px 3px 32px 10px rgba(0, 0, 0, 0.16);
+  padding: 2.4rem 5.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 9.9rem;
+}
+
+.top-bar {
+  background-color: #E5D8EA;
+  width: 168px;
+  height: 17px;
+  border-radius: 999px;
+  margin: 0 auto;
+}
+
+/* Header of Widget*/
+.header-widget {
+  text-align: left;
+}
+.header-widget h2 {
+  font-size: 4rem;
+}
+.header-widget p {
+  font-size: 2.5rem;
+}
+.header-widget strong {
+  color: #864293;
+}
+
+/* Main of Widget */
+.main-widget {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#info-driver {
+  position: relative;
+}
+
+.image-star-driver {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: -moz-max-content;
+  width: max-content;
+}
+.image-star-driver img {
+  border-radius: 50%;
+  z-index: 1;
+}
+.image-star-driver span {
+  background-color: #372D3B;
+  color: #FBF8FC;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.98rem;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 0.6rem 2.3rem;
+  border-radius: 15px;
+  font-size: 1.9rem;
+  margin-bottom: 0.6rem;
+  margin-top: -2rem;
+  z-index: 1;
+}
+.image-star-driver strong {
+  font-size: 1.8rem;
+}
+
+#car-image {
+  position: absolute;
+  top: 3rem;
+  left: 9.2rem;
+}
+
+#info-car {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: start;
+}
+#info-car strong {
+  font-size: 4.1rem;
+}
+#info-car span {
+  font-size: 2.4rem;
+}
+
+/* Footer of Widget */
+.footer-widget {
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+}
+.footer-widget input {
+  flex: 1;
+  color: #372D3B;
+  background-color: #F5EDF7;
+  font-size: 2.4rem;
+  border-radius: 24px;
+  padding: 1.7rem 2.9rem;
+  border: 0;
+}
+.footer-widget input:focus {
+  outline: 2px solid #372D3B;
+}
+.footer-widget input::-moz-placeholder {
+  color: #372D3B;
+}
+.footer-widget input::placeholder {
+  color: #372D3B;
+}
+.footer-widget div {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  color: #372D3B;
+  background-color: #FFFFFF;
+}
+
+body, input, textarea, button {
+  font-size: 1.6rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+}/*# sourceMappingURL=styles.css.map */
