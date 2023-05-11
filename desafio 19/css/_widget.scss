@@ -3,8 +3,8 @@
 }
 
 .widget{
-  width: 795px;
-  height: 689px;
+  width: max-content;
+  height: max-content;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -30,7 +30,6 @@
 
 .header-widget {
   text-align: left;
-
   h2{
     font-size: 4rem;
   }
@@ -139,5 +138,35 @@
     display: flex;
     gap: 4rem;
     align-items: center;
+  }
+}
+
+@media(max-width: 710px){
+  .widget{
+    width: 100%;
+  }
+  
+  .header-widget{
+    word-wrap: break-word;
+  }
+  
+  .main-widget{
+    flex-direction: column;
+    gap: 1rem;
+    align-items: start;
+  }
+
+  #car-image{
+    width: 190px;
+    height: 74px;
+
+  }
+
+  .footer-widget{
+    flex-direction: column;
+    align-items: start;
+    input{
+      width: 100%;
+    }
   }
 }

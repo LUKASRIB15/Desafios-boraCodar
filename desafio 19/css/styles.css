@@ -1,6 +1,8 @@
 .widget {
-  width: 795px;
-  height: 689px;
+  width: -moz-max-content;
+  width: max-content;
+  height: -moz-max-content;
+  height: max-content;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -126,6 +128,30 @@
   align-items: center;
 }
 
+@media (max-width: 710px) {
+  .widget {
+    width: 100%;
+  }
+  .header-widget {
+    word-wrap: break-word;
+  }
+  .main-widget {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: start;
+  }
+  #car-image {
+    width: 190px;
+    height: 74px;
+  }
+  .footer-widget {
+    flex-direction: column;
+    align-items: start;
+  }
+  .footer-widget input {
+    width: 100%;
+  }
+}
 * {
   margin: 0;
   padding: 0;
