@@ -7,59 +7,173 @@
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./styles.css">
   <title>Card de personagem</title>
 </head>
 <body>
-  <main>
-    <div class="card-finn">
-      <div class="bg-gradient">
-        <p>finn</p>
-      </div>
-    </div>
-    <section class="card-rey-skywalker">
-      <div class="card-rey-skywalker-front">
-        <p>Rey Skywalker</p>
-      </div>
-      <div class="card-rey-skywalker-back">
-        <div class="name-and-description">
-          <h2>Rey skywalker</h2>
-          <p>
-            Era uma catadora de sucata que descobriu ser sensível 
-            à Força durante sua busca ao lendário Mestre Jedi 
-            Luke Skywalker.
-          </p>
+  <main class="carousel swiper swiper-container-centered">
+    <div class="swiper-wrapper">
+      <section id="card-rey-skywalker" class="swiper-slide">
+        <div class="card-rey-skywalker-front">
+          <p>Rey Skywalker</p>
         </div>
-        <section class="about-character">
-          <div>
-            <span>Filmes</span>
-            <strong>The Force Awakens, The Last Jedi, The Rise of Skywalker & Forces of Destiny</strong>
+        <div class="card-rey-skywalker-back">
+          <div class="name-and-description">
+            <h2>Rey skywalker</h2>
+            <p>
+              Era uma catadora de sucata que descobriu ser sensível 
+              à Força durante sua busca ao lendário Mestre Jedi 
+              Luke Skywalker.
+            </p>
           </div>
-          <div>
-            <span>Espécie</span>
-            <strong>Humana</strong>
+          <section class="about-character">
+            <div>
+              <span>Filmes</span>
+              <strong>The Force Awakens, The Last Jedi, The Rise of Skywalker & Forces of Destiny</strong>
+            </div>
+            <div>
+              <span>Espécie</span>
+              <strong>Humana</strong>
+            </div>
+            <div>
+              <span>Altura</span>
+              <strong>1,7m</strong>
+            </div>
+            <div>
+              <span>Localidade</span>
+              <strong>Jakku</strong>
+            </div>
+            <div>
+              <span>Armas</span>
+              <strong>Sabre de luz, Blaster, Quarterstaff</strong>
+            </div>
+          </section>
+          <img id="image-character" src="./assets/sky-walker.png" width="355px" height="465px" alt="Imagem do personagem">
+        </div>
+      </section>
+      <section id="card-bb-8" class="swiper-slide">
+        <div class="card-bb-8-front">
+            <p>bb-8</p>
+        </div>
+        <div class="card-bb-8-back">
+          <div class="name-and-description">
+            <h2>bb-8</h2>
+            <p>
+              É um robô esférico com movimentação livre 
+              de sua cabeça em formato de domo, com inteligência 
+              artificial consegue se comunicar com quase todas as 
+              espécies da galáxia
+            </p>
           </div>
-          <div>
-            <span>Altura</span>
-            <strong>1,7m</strong>
-          </div>
-          <div>
-            <span>Localidade</span>
-            <strong>Jakku</strong>
-          </div>
-          <div>
-            <span>Armas</span>
-            <strong>Sabre de luz, Blaster, Quarterstaff</strong>
-          </div>
+          <section class="about-character">
+            <div>
+              <span>Filmes</span>
+              <strong>The Force Awakens, The Last Jedi & The Rise of Skywalker</strong>
+            </div>
+            <div>
+              <span>Espécie</span>
+              <strong>Droide</strong>
+            </div>
+            <div>
+              <span>Altura</span>
+              <strong>0,67m</strong>
+            </div>
+            <div>
+              <span>Localidade</span>
+              <strong>Hosnian Prime</strong>
+            </div>
+            <div>
+              <span>Armas</span>
+              <strong>Sabre de luz, Blaster, Quarterstaff</strong>
+            </div>
+          </section>
+          <img id="image-character" src="./assets/bb-8.png" width="355px" height="465px" alt="Imagem do personagem">
+        </div>
         </section>
-        <img id="image-character" src="./assets/sky-walker.png" width="355px" height="465px" alt="Imagem do personagem">
-      </div>
-    </section>
-    <div class="card-bb-8">
-      <div class="bg-gradient">
-        <p>bb-8</p>
-      </div>
+        <section id="card-darth-vader" class="swiper-slide">
+          <div class="card-darth-vader-front">
+              <p>darth vader</p>
+          </div>
+          <div class="card-darth-vader-back">
+            <div class="name-and-description">
+              <h2>Darth Vader</h2>
+              <p>
+                É um robô esférico com movimentação livre 
+                de sua cabeça em formato de domo, com inteligência 
+                artificial consegue se comunicar com quase todas as 
+                espécies da galáxia
+              </p>
+            </div>
+            <section class="about-character">
+              <div>
+                <span>Filmes</span>
+                <strong>The Force Awakens, The Last Jedi & The Rise of Skywalker</strong>
+              </div>
+              <div>
+                <span>Espécie</span>
+                <strong>Droide</strong>
+              </div>
+              <div>
+                <span>Altura</span>
+                <strong>1,7m</strong>
+              </div>
+              <div>
+                <span>Localidade</span>
+                <strong>Hosnian Prime</strong>
+              </div>
+              <div>
+                <span>Armas</span>
+                <strong>Sabre de luz, Blaster, Quarterstaff</strong>
+              </div>
+            </section>
+            <img id="image-character" src="./assets/darth-vader.png" width="355px" height="465px" alt="Imagem do personagem">
+          </div>
+          </section>
+          <section id="card-finn" class="swiper-slide">
+            <div class="card-finn-front">
+                <p>finn</p>
+            </div>
+            <div class="card-finn-back">
+              <div class="name-and-description">
+                <h2>Finn</h2>
+                <p>
+                  Foi um humano sensível à Força que serviu 
+                  como Stormtrooper da Primeira Ordem. 
+                  Ele foi considerado um dos melhores Stormtroopers 
+                  do grupo antes de se juntar à Resistência.
+                </p>
+              </div>
+              <section class="about-character">
+                <div>
+                  <span>Filmes</span>
+                  <strong>The Force Awakens, The Last Jedi & The Rise of Skywalker</strong>
+                </div>
+                <div>
+                  <span>Espécie</span>
+                  <strong>Humano</strong>
+                </div>
+                <div>
+                  <span>Altura</span>
+                  <strong>1,78m</strong>
+                </div>
+                <div>
+                  <span>Localidade</span>
+                  <strong>11 ABY</strong>
+                </div>
+                <div>
+                  <span>Armas</span>
+                  <strong>Sabre de luz, Blaster, Quarterstaff</strong>
+                </div>
+              </section>
+              <img id="image-character" src="./assets/finn.png" width="203px" height="447px" alt="Imagem do personagem">
+            </div>
+            </section>
     </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
   </main>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
