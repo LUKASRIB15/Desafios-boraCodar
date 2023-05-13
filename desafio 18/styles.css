@@ -22,74 +22,45 @@ body{
   width: 100vw;
 }
 
-main{
-  display: flex;
+.swiper{
+  /*display: flex;
   align-items: center;
   justify-content: center;
-  gap: 22rem;
-}
-
-.bg-gradient{
+  gap: 22rem;*/
+  width: 1200px;
+  height: 1000px;
   position: absolute;
-  inset: 0;
-  background: linear-gradient(
-              0deg, rgba(0, 1, 14, 0.5), 
-              rgba(0, 1, 14, 0.4)
-            ), linear-gradient(
-              148.95deg, rgba(14, 23, 101, 0.9) -7.05%,
-              rgba(42, 17, 92, 0.4) 110.07%);
-  border-radius: 16px;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
+.swiper-wrapper{
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-left: 20rem;
 }
 
-.bg-gradient p{
-  font-size: 3.2rem;
-  font-weight: bold;
-  color: transparent;
-  -webkit-text-stroke: 1.5px #312D74;
-  text-transform: uppercase;
-  opacity: 0.9;
-}
-
-.card-bb-8, .card-finn{
-  position: relative;
-  width: 348px; 
-  height: 486.5px;
-  opacity: 0.3;
-  box-shadow: 0px 113px 45px rgba(0, 0, 0, 0.02), 
-              0px 64px 38px rgba(0, 0, 0, 0.08), 
-              0px 28px 28px rgba(0, 0, 0, 0.13), 
-              0px 7px 16px rgba(0, 0, 0, 0.15), 
-              0px 0px 0px rgba(0, 0, 0, 0.15);
-  border-radius: 16px;
-}
-
-.card-finn{
-  background-image: url(./assets/bg-finn.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.card-rey-skywalker{
-  width: 436px; 
-  height: 608px;
+#card-rey-skywalker, 
+#card-bb-8, 
+#card-darth-vader,
+#card-finn{
   perspective: 60rem;
-  position: absolute;
-  z-index: 1;
 }
 
-.card-rey-skywalker > div{
+#card-rey-skywalker > div,
+#card-bb-8 > div,
+#card-darth-vader > div,
+#card-finn > div
+{
   width: inherit;
   height: inherit;
   position: absolute;
   border-radius: 16px;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 1;
 
   transition: all .7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform-style: preserve-3d;
@@ -120,13 +91,17 @@ main{
   justify-content: center;
 }
 
-.card-rey-skywalker-front p{
+.card-rey-skywalker-front p,
+.card-bb-8-front p,
+.card-darth-vader-front p,
+.card-finn-front p
+{
   font-size: 3.2rem;
   font-weight: bold;
   color: transparent;
   -webkit-text-stroke: 1.5px #312D74;
   text-transform: uppercase;
-  opacity: 0.9;
+  opacity: 1;
 }
 
 
@@ -152,23 +127,161 @@ main{
   position: relative;
 }
 
-.card-rey-skywalker:hover .card-rey-skywalker-front{
+#card-rey-skywalker:not(.swiper-slide-next, .swiper-slide-prev):hover .card-rey-skywalker-front,
+#card-bb-8:not(.swiper-slide-next, .swiper-slide-prev):hover .card-bb-8-front,
+#card-darth-vader:not(.swiper-slide-next, .swiper-slide-prev):hover .card-darth-vader-front,
+#card-finn:not(.swiper-slide-next, .swiper-slide-prev):hover .card-finn-front
+{
   transform: rotateY(180deg);
   cursor: pointer;
 }
 
-.card-rey-skywalker:hover .card-rey-skywalker-back{
+#card-rey-skywalker:not(.swiper-slide-next, .swiper-slide-prev):hover .card-rey-skywalker-back,
+#card-bb-8:not(.swiper-slide-next, .swiper-slide-prev):hover .card-bb-8-back,
+#card-darth-vader:not(.swiper-slide-next, .swiper-slide-prev):hover .card-darth-vader-back,
+#card-finn:not(.swiper-slide-next, .swiper-slide-prev):hover .card-finn-back
+{
   transform: rotateY(0deg);
   cursor: pointer;
 }
 
-.card-bb-8{
-  background-image: url(./assets/bg-bb8.png);
+.card-bb-8-front{
+  background:linear-gradient(
+    0deg, rgba(0, 1, 14, 0.9), 
+    rgba(0, 1, 14, 0.5)
+  ), linear-gradient(
+    148.95deg, rgba(14, 23, 101, 0.5) -7.05%,
+    rgba(42, 17, 92, 0.5) 110.07%), 
+    url(./assets/bg-bb8.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  transform: rotateY(0);
+  position: relative;
+  box-shadow: 0px 113px 45px rgba(0, 0, 0, 0.02), 
+              0px 64px 38px rgba(0, 0, 0, 0.08), 
+              0px 28px 28px rgba(0, 0, 0, 0.13), 
+              0px 7px 16px rgba(0, 0, 0, 0.15), 
+              0px 0px 0px rgba(0, 0, 0, 0.15);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.card-bb-8-back{
+  background: linear-gradient(
+    90.24deg, rgba(14, 23, 101, 0.85) 
+    0%, rgba(53, 14, 88, 0.85) 
+    98.1%), 
+    linear-gradient(
+    180.28deg, rgba(5, 8, 36, 0.7) 
+    0.25%, rgba(255, 255, 255, 0.7) 
+    0.26%, rgba(255, 255, 255, 0) 99.75%),
+    url(./assets/bg-bb8.png);
+  mask-image:-webkit-linear-gradient(
+    180.28deg, rgba(5, 8, 36, 0.88) 
+    0.25%, rgba(255, 255, 255, 0.88) 
+    0.26%, rgba(255, 255, 255, 0) 99.75% );
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
+  transform: rotateY(180deg);
+  padding: 4.8rem 4rem;
+  position: relative;
+}
+
+.card-darth-vader-front{
+  background:linear-gradient(
+    0deg, rgba(0, 1, 14, 0.9), 
+    rgba(0, 1, 14, 0.5)
+  ), linear-gradient(
+    148.95deg, rgba(14, 23, 101, 0.85) -7.05%,
+    rgba(42, 17, 92, 0.85) 110.07%), 
+    url(./assets/bg-darthvader.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transform: rotateY(0);
+  position: relative;
+  box-shadow: 0px 113px 45px rgba(0, 0, 0, 0.02), 
+              0px 64px 38px rgba(0, 0, 0, 0.08), 
+              0px 28px 28px rgba(0, 0, 0, 0.13), 
+              0px 7px 16px rgba(0, 0, 0, 0.15), 
+              0px 0px 0px rgba(0, 0, 0, 0.15);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-darth-vader-back{
+  background: linear-gradient(
+    90.24deg, rgba(14, 23, 101, 0.85) 
+    0%, rgba(53, 14, 88, 0.85) 
+    98.1%), 
+    linear-gradient(
+    180.28deg, rgba(5, 8, 36, 0.7) 
+    0.25%, rgba(255, 255, 255, 0.7) 
+    0.26%, rgba(255, 255, 255, 0) 99.75%),
+    url(./assets/bg-darthvader.png);
+  mask-image:-webkit-linear-gradient(
+    180.28deg, rgba(5, 8, 36, 0.88) 
+    0.25%, rgba(255, 255, 255, 0.88) 
+    0.26%, rgba(255, 255, 255, 0) 99.75% );
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
+  transform: rotateY(180deg);
+  padding: 4.8rem 4rem;
+  position: relative;
+}
+
+.card-finn-front{
+  background:linear-gradient(
+    0deg, rgba(0, 1, 14, 0.9), 
+    rgba(0, 1, 14, 0.5)
+  ), linear-gradient(
+    148.95deg, rgba(14, 23, 101, 0.5) -7.05%,
+    rgba(42, 17, 92, 0.5) 110.07%), 
+    url(./assets/bg-finn.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transform: rotateY(0);
+  position: relative;
+  box-shadow: 0px 113px 45px rgba(0, 0, 0, 0.02), 
+              0px 64px 38px rgba(0, 0, 0, 0.08), 
+              0px 28px 28px rgba(0, 0, 0, 0.13), 
+              0px 7px 16px rgba(0, 0, 0, 0.15), 
+              0px 0px 0px rgba(0, 0, 0, 0.15);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-finn-back{
+  background: linear-gradient(
+    90.24deg, rgba(14, 23, 101, 0.7) 
+    0%, rgba(53, 14, 88, 0.7) 
+    98.1%), 
+    linear-gradient(
+    180.28deg, rgba(5, 8, 36, 0.7) 
+    0.25%, rgba(255, 255, 255, 0.7) 
+    0.26%, rgba(255, 255, 255, 0) 99.75%),
+    url(./assets/bg-finn.png);
+  mask-image:-webkit-linear-gradient(
+    180.28deg, rgba(5, 8, 36, 0.88) 
+    0.25%, rgba(255, 255, 255, 0.88) 
+    0.26%, rgba(255, 255, 255, 0) 99.75% );
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
+  transform: rotateY(180deg);
+  padding: 4.8rem 4rem;
+  position: relative;
+}
 /* Content Card */
 .name-and-description h2{
   font-size: 3.2rem;
@@ -213,4 +326,28 @@ main{
 .about-character strong{
   font-size: 1.4rem;
   color: #D8CEDE;
+}
+
+.swiper-slide-prev {
+  /*width: 348px; */
+  height: 486.5px;
+  z-index: 0;
+}
+
+.swiper-slide-active{
+  max-width: 436px; 
+  width: 100%;
+  height: 608px;
+  z-index: 1;
+}
+
+.swiper-slide-next {
+  /*width: 348px; */
+  height: 486.5px;
+  z-index: 0;
+}
+
+.swiper-slide-hidden{
+  visibility: hidden;
+  opacity: 0;
 }
