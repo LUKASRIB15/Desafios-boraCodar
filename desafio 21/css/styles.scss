@@ -1,0 +1,23 @@
+@import 'colors';
+@import 'component';
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  font-size: 62.5%;
+}
+
+body{
+  color: $gray-200;
+  background-color: $purple-900;
+}
+
+body, input, textarea, button{
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+}
