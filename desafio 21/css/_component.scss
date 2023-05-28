@@ -1,0 +1,246 @@
+.img-product{
+  width: 104px;
+  height: 104px;
+  border-radius: 8px;
+
+  object-fit: cover;
+  aspect-ratio: 1/1;
+
+}
+
+i{
+  color: $purple-500;
+  transition: color 0.2s;
+}
+
+.store-car{
+  background-color: $gray-700;
+  width: 428px;
+  position: absolute;
+  top: 0;
+  right:0;
+  bottom: 0;
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.25);
+}
+
+.store-car{
+  header{
+    font-size: 2rem;
+    padding: 2.4rem 1.6rem 2.4rem 3.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $gray-500;
+
+    img{
+      width: 14px;
+      height: 14px;
+    }
+
+    button {
+      background-color: transparent;
+      border:0;
+      display: flex;
+      justify-content: center;
+      padding: 0.5rem;
+    }
+  }
+}
+
+.list-products{
+  padding: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+  height: 440px;
+  overflow-y: scroll;
+  border-bottom: 1px solid $gray-500;
+
+  &::-webkit-scrollbar{
+    width: 7px;
+  }
+  
+  &::-webkit-scrollbar-track{
+    background-color: $black;
+  }
+  
+  &::-webkit-scrollbar-thumb{
+    background-color: $gray-500;
+    border-radius: 999px;
+  }
+
+  section{
+    display: grid;
+    grid-template-columns: 104px 1fr;
+    gap: 2.4rem;
+  }
+
+  .product-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .price{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    div{
+      display: flex;
+    }
+
+    input{
+      padding: 0.6rem;
+      width: 40px;
+      text-align: center;
+      transition: color 0.2s;
+
+      &[type="number"]{
+        -moz-appearance: textfield;
+        appearance: textfield;
+      }
+
+      &[type="number"]::-webkit-inner-spin-button{
+        -webkit-appearance: none;
+      }
+
+      &:disabled{
+        background: transparent;
+        border: none;
+        color: $gray-100;
+      }
+    }
+
+    button{
+      padding: 1.2rem;
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      border-radius: 8px;
+      border: 0;
+    }
+
+    .decrement{
+      border: 2px solid $gray-500;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+
+      &:hover{
+        border: 2px solid $purple-500;
+
+        i{
+          color: $gray-100;
+        }
+      }
+    }
+
+    .increment{
+      border: 2px solid $purple-500;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+
+      &:hover{
+        background-color: $purple-900;
+        border: 2px solid $purple-900;
+
+        i{
+          color: $gray-100;
+        }
+      }
+    }
+  }
+}
+
+
+.store-car footer{
+  padding: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+
+  .payment-total{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    position: relative;
+    font-size: 2rem;
+    height: 68px;
+
+    .add-ticket{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      text-align: end;
+      transition: color 1s;
+
+      &:hover{
+        i, input::placeholder{
+          color: $purple-100;
+        }
+      }
+
+      input{
+        background-color: transparent;
+        color: $gray-200;
+        border: 0;
+        width: 52%;
+        outline: none;
+
+        &::placeholder{
+          color: $purple-500;
+        }
+
+        &:focus{
+          border-bottom: 2px solid $purple-500; 
+        }
+
+      }
+    }
+  }
+
+  button{
+    padding: 2rem 4.8rem;
+    font-size: 1.8rem;
+    background-color: $purple-900;
+    color: $gray-100;
+    border: 0;
+    border-radius: 8px;
+    transition: background 0.2s;
+    cursor: pointer;
+
+    &:not(:focus):hover{
+      background-color: $purple-100;
+    }
+
+    &:focus{
+     border: 4px solid $gray-700;
+     outline: 2px solid $gray-100;
+     cursor: not-allowed;
+    }
+  }
+}
+
+#loading{
+  animation: animation-loading 2s infinite;
+}
+
+@keyframes animation-loading{
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+@media(max-width: 360px){
+  .store-car{
+    width: 360px;
+  }
+
+  .list-products{
+    font-size: 1.4rem;
+    padding: 1.6rem;
+  }
+}

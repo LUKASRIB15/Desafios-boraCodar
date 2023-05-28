@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
+  <title>Componente de carrinho</title>
+</head>
+<body>
+  <main class="store-car">
+    <header>
+      <p>Seu carrinho tem <strong id="total-items">0 itens</strong></p>
+      <button>
+        <img src="./assets/close.svg" alt="botão para sair">
+      </button>
+    </header>
+    <main class="list-products">
+      <section>
+        <img class="img-product" src="assets/product-image-monitor.jpg" alt="">
+        <div class="product-info">
+          <p>Monitor Gamer Curvo 49 DQHD, 240Hz, 1ms, HDMI e...</p>
+          <div class="price">
+            <strong>R$ 8.599,90</strong>
+            <div>
+              <button onclick="subtractProduct('product-1')" class="decrement">
+                <i class="ph-bold ph-minus"></i>               
+              </button>
+              <input id="product-1" type="number" value="0" disabled />
+              <button onclick="addProduct('product-1')" class="increment">
+                <i class="ph-bold ph-plus"></i>               
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <img class="img-product" src="assets/product-image-cadeira.jpg" alt="">
+        <div class="product-info">
+          <p>Cadeira Gamer  RGB - Preta com Iluminação (Led)</p>
+          <div class="price">
+            <strong>R$ 959,90</strong>
+            <div>
+              <button onclick="subtractProduct('product-2')" class="decrement">
+                <i class="ph-bold ph-minus"></i>               
+              </button>
+              <input id="product-2" type="number" value="0" disabled />
+              <button onclick="addProduct('product-2')" class="increment">
+                <i class="ph-bold ph-plus"></i>               
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <img class="img-product" src="assets/product-image-teclado.jpg" alt="">
+        <div class="product-info">
+          <p>Teclado Gamer Mecânico Low Profile RGB AW510K 580</p>
+          <div class="price">
+            <strong>R$ 1.002,90</strong>
+            <div>
+              <button onclick="subtractProduct('product-3')" class="decrement">
+                <i class="ph-bold ph-minus"></i>               
+              </button>
+              <input id="product-3" type="number" value="0" disabled />
+              <button onclick="addProduct('product-3')" class="increment">
+                <i class="ph-bold ph-plus"></i>               
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <img class="img-product" src="assets/product-image-headset.jpg" alt="">
+        <div class="product-info">
+          <p>Headset Gamer RGB Preto</p>
+          <div class="price">
+            <strong>R$ 99,90</strong>
+            <div>
+              <button onclick="subtractProduct('product-4')" class="decrement">
+                <i class="ph-bold ph-minus"></i>               
+              </button>
+              <input id="product-4" type="number" value="0" disabled />
+              <button onclick="addProduct('product-4')" class="increment">
+                <i class="ph-bold ph-plus"></i>               
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <img class="img-product" src="assets/product-image-patinho.jpg" alt="">
+        <div class="product-info">
+          <p>Patinho de borracha para banho</p>
+          <div class="price">
+            <strong>R$ 19,90</strong>
+            <div>
+              <button onclick="subtractProduct('product-5')" class="decrement">
+                <i class="ph-bold ph-minus"></i>               
+              </button>
+              <input id="product-5" type="number" value="0" disabled />
+              <button onclick="addProduct('product-5')" class="increment">
+                <i class="ph-bold ph-plus"></i>               
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="payment-total">
+        <span>Total:</span>
+        <strong id="total-payable">R$ 0,00</strong>
+        <div class="add-ticket">
+          <i class="ph-bold ph-tag" style="font-size:20px;"></i>
+          <input type="text" id="input-ticket"  placeholder="Adicionar cupom">
+        </div>
+      </div>
+      <button id="confirm-sale" onclick="confirmSale()">
+        Finalizar compra
+      </button>
+    </footer>
+  </main>
+  <script src="./script.js"></script>
+</body>
+</html>
