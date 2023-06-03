@@ -1,0 +1,110 @@
+img {
+  width: 48px;
+  height: 48px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 1/1;
+  border-radius: 8px;
+}
+
+.profile-settings {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 375px;
+  width: 100%;
+  background-color: #FDFCFE;
+  padding: 1.6rem 2.4rem;
+  border-radius: 12px;
+  box-shadow: 0px 52px 21px rgba(30, 30, 30, 0.01), 0px 29px 18px rgba(30, 30, 30, 0.05), 0px 13px 13px rgba(30, 30, 30, 0.09), 0px 3px 7px rgba(30, 30, 30, 0.1), 0px 0px 0px rgba(30, 30, 30, 0.1);
+}
+.profile-settings header {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-bottom: 2.4rem;
+}
+.profile-settings header strong {
+  font-size: 1.8rem;
+}
+.profile-settings header span {
+  font-size: 1.4rem;
+}
+
+section {
+  padding: 1.6rem 0;
+  border-top: 1px solid #F4EFFA;
+}
+section span {
+  text-transform: uppercase;
+  color: #797085;
+  font-size: 1.2rem;
+  display: inline-block;
+  margin-bottom: 1.2rem;
+}
+
+.links-access {
+  display: flex;
+  flex-direction: column;
+}
+.links-access a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  padding: 0.8rem 0;
+  color: #38343D;
+  transition: background 0.1s;
+  position: relative;
+}
+.links-access a:hover {
+  background-color: #F4EFFA;
+  border-radius: 8px;
+}
+.links-access a i {
+  font-size: 20px;
+}
+.links-access a span {
+  text-transform: none;
+  font-size: 1.6rem;
+  color: #38343D;
+  display: inline;
+  margin-bottom: 0;
+}
+.links-access a div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+#leave-settings {
+  color: #AA2222;
+}
+#leave-settings span {
+  color: #AA2222;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  background: linear-gradient(107.54deg, #935FD3 0%, #9245F1 100%);
+  color: #38343D;
+  height: 100vh;
+  width: 100vw;
+}
+
+body, input, button, textarea {
+  font-family: "Heebo", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+}/*# sourceMappingURL=styles.css.map */
