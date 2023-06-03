@@ -40,6 +40,7 @@ Você pode acessar as páginas do DevLinks e os desafios pelos seguintes links:
   <li><a href="https://lukasrib15.github.io/Desafios-boraCodar/desafio%2019/">Desafio 19</a></li>
   <li><a href="https://lukasrib15.github.io/Desafios-boraCodar/desafio%2020/">Desafio 20</a></li>
   <li><a href="https://lukasrib15.github.io/Desafios-boraCodar/desafio%2021/">Desafio 21</a></li>
+  <li><a href="https://lukasrib15.github.io/Desafios-boraCodar/desafio%2022/">Desafio 22</a></li>
 </ul>
 
 <p>Obs: Essa lista será atualizada a cada desafio concluído!<p>
@@ -123,6 +124,11 @@ Desafio 20: Feito com HTML e CSS
 ![Alt text](assetsScreens/desafio-20.png)
 
 <br>
-Desafio 21: Feito com HTML, SASS e JavaScript
+Desafio 21: Feito com HTML, SASS, JavaScript e PhosphorIcons (biblioteca de ícones)
 
 ![Alt text](assetsScreens/desafio-21.png)
+
+<br>
+Desafio 22: Feito com HTML, SASS e PhosphorIcons (biblioteca de ícones)
+
+![Alt text](assetsScreens/desafio-22.png)
