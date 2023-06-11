@@ -1,0 +1,157 @@
+.component-multi-step{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 592px;
+  height: max-content;
+  border: 1px solid $gray-100;
+  border-radius: 6px;
+  padding: 3.2rem;
+}
+
+/* steps of form */
+
+.steps{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 3.2rem;
+  border-bottom: 1px solid $gray-100;
+
+  div{
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    color: $gray-200;
+    
+    span{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $gray-100;
+      padding: 0.8rem 1.3rem;
+      border-radius: 50%;
+      font-weight: bold;
+      font-size: 1.4rem;
+    }
+  }
+}
+
+ .steps .active{
+  span{
+    color: $white;
+    background-color: $purple-mid;
+  }
+
+  strong{
+    color: $gray-400;
+  }
+}
+
+.steps .checked{
+  span{
+    background-color: $success;
+    padding: 0.8rem;
+    
+  }
+
+  strong{
+    color: $gray-400;
+  }
+}
+
+/* forms */
+
+.form-content{
+  margin-top: 3.2rem;
+}
+
+.form-multi-step{
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+
+  div{
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    label{
+      font-weight: bold;
+    }
+
+    input{
+      padding: 0.8rem 1.6rem;
+      border-radius: 2px;
+      border: 1px solid $gray-100;
+      transition: border 0.2s;
+
+      &::placeholder{
+        color: $gray-200;
+      }
+
+      &:hover{
+        border: 1px solid $purple-mid;
+      }
+    }
+
+    textarea{
+      resize: none;
+      height: 100px;
+      padding: 0.8rem 1.6rem;
+      border-radius: 2px;
+      border: 1px solid $gray-100;
+      transition: border 0.2s;
+
+
+      &::placeholder{
+        color: $gray-200;
+      }
+
+      &:hover{
+        border: 1px solid $purple-mid;
+      }
+    }
+  }
+}
+
+.hidden{
+  display: none;
+}
+
+/* button actions */
+
+.actions-form{
+  width: 100%;
+  margin-top: 3.2rem;
+  display: flex;
+  justify-content: end;
+
+  #button-progress{
+    background-color: $purple-mid;
+    padding: 1.6rem 3.2rem;
+    border: 0;
+    border-radius: 6px;
+    color: $white;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background 0.2s;
+
+    &:hover{
+      background-color: $purple-light;
+      cursor: pointer;
+    }
+  }
+
+  #button-back{
+    background-color: $white;
+    padding: 1.6rem 3.2rem;
+    border: 1px solid $purple-mid;
+    border-radius: 6px;
+    color: $purple-mid;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}

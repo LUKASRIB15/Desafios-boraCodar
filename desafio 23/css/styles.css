@@ -1,0 +1,160 @@
+.component-multi-step {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 592px;
+  height: -moz-max-content;
+  height: max-content;
+  border: 1px solid #E1E1E6;
+  border-radius: 6px;
+  padding: 3.2rem;
+}
+
+/* steps of form */
+.steps {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 3.2rem;
+  border-bottom: 1px solid #E1E1E6;
+}
+.steps div {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  color: #8D8D99;
+}
+.steps div span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #E1E1E6;
+  padding: 0.8rem 1.3rem;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.steps .active span {
+  color: #FFFFFF;
+  background-color: #633BBC;
+}
+.steps .active strong {
+  color: #323238;
+}
+
+.steps .checked span {
+  background-color: #1D8841;
+  padding: 0.8rem;
+}
+.steps .checked strong {
+  color: #323238;
+}
+
+/* forms */
+.form-content {
+  margin-top: 3.2rem;
+}
+
+.form-multi-step {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.form-multi-step div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.form-multi-step div label {
+  font-weight: bold;
+}
+.form-multi-step div input {
+  padding: 0.8rem 1.6rem;
+  border-radius: 2px;
+  border: 1px solid #E1E1E6;
+  transition: border 0.2s;
+}
+.form-multi-step div input::-moz-placeholder {
+  color: #8D8D99;
+}
+.form-multi-step div input::placeholder {
+  color: #8D8D99;
+}
+.form-multi-step div input:hover {
+  border: 1px solid #633BBC;
+}
+.form-multi-step div textarea {
+  resize: none;
+  height: 100px;
+  padding: 0.8rem 1.6rem;
+  border-radius: 2px;
+  border: 1px solid #E1E1E6;
+  transition: border 0.2s;
+}
+.form-multi-step div textarea::-moz-placeholder {
+  color: #8D8D99;
+}
+.form-multi-step div textarea::placeholder {
+  color: #8D8D99;
+}
+.form-multi-step div textarea:hover {
+  border: 1px solid #633BBC;
+}
+
+.hidden {
+  display: none;
+}
+
+/* button actions */
+.actions-form {
+  width: 100%;
+  margin-top: 3.2rem;
+  display: flex;
+  justify-content: end;
+}
+.actions-form #button-progress {
+  background-color: #633BBC;
+  padding: 1.6rem 3.2rem;
+  border: 0;
+  border-radius: 6px;
+  color: #FFFFFF;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background 0.2s;
+}
+.actions-form #button-progress:hover {
+  background-color: #8257E5;
+  cursor: pointer;
+}
+.actions-form #button-back {
+  background-color: #FFFFFF;
+  padding: 1.6rem 3.2rem;
+  border: 1px solid #633BBC;
+  border-radius: 6px;
+  color: #633BBC;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  color: #323238;
+  background-color: #FFFFFF;
+}
+
+body, input, button, textarea {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+}/*# sourceMappingURL=styles.css.map */
