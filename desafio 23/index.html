@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Formulário MultiStep</title>
+</head>
+<body>
+  <main class="component-multi-step">
+    <header class="steps">
+      <div id="step-1" class="active">
+        <span id="step-span-1">1</span>
+        <strong>Contato</strong>
+      </div>
+      <img src="./assets/arrow-right.svg">
+      <div id="step-2">
+        <span id="step-span-2">2</span>
+        <strong>Empresa</strong>
+      </div>
+      <img src="./assets/arrow-right.svg">
+      <div id="step-3">
+        <span id="step-span-3">3</span>
+        <strong>Projeto</strong>
+      </div>
+    </header>
+    <main class="form-content">
+      <form onsubmit="handleSubmitForm(event)" id="form-1" class="form-multi-step">
+        <div>
+          <label for="name">Nome</label>
+          <input id="name" type="text" placeholder="Como prefere ser chamado" required>
+        </div>
+        <div>
+          <label for="phone">Telefone</label>
+          <input id="phone" type="text" placeholder="Digite seu número de WhatsApp" required>
+        </div>
+        <div>
+          <label for="email">E-mail</label>
+          <input id="email" type="text" placeholder="Digite seu e-mail" required>
+        </div>
+      </form>
+      <form onsubmit="handleSubmitForm(event)" id="form-2" class="form-multi-step hidden">
+        <div>
+          <label for="name-company">Nome da empresa</label>
+          <input id="name-company" type="text" placeholder="Qual é o nome da empresa" required>
+        </div>
+        <div>
+          <label for="employees">Número de funcionários</label>
+          <input id="employees" type="text" placeholder="Digite o número de colaboradores" required>
+        </div>
+        <div>
+          <label for="about-business">Sobre seu negócio</label>
+          <textarea id="about-business" placeholder="Fale um pouco sobre seus produtos ou serviços" required></textarea>
+        </div>
+      </form>
+      <form onsubmit="handleSubmitForm(event)" id="form-3" class="form-multi-step hidden">
+        <div>
+          <label for="project">Objetivos do projeto</label>
+          <textarea id="project" placeholder="Descreva quais objetivos desse projeto" required></textarea>
+        </div>
+      </form>
+      <h2 id="text-success" class="hidden">Obrigado por concluir o Formulário!</h2>
+    </main>
+    <footer class="actions-form">
+      <button id="button-progress" form="form-1" type="submit">Continuar</button>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
