@@ -43,6 +43,7 @@ Você pode acessar as páginas do DevLinks e os desafios pelos seguintes links:
   <li><a href="https://lukasrib15.github.io/Desafios-boraCodar/desafio%2022/">Desafio 22</a></li>
   <li><a href="https://lukasrib15.github.io/Desafios-boraCodar/desafio%2023/">Desafio 23</a></li>
   <li><a href="https://lukasrib15.github.io/Desafios-boraCodar/desafio%2024/">Desafio 24</a></li>
+  <li><a href="https://lukasrib15.github.io/Desafios-boraCodar/desafio%2025/">Desafio 25</a></li>
 </ul>
 
 <p>Obs: Essa lista será atualizada a cada desafio concluído!<p>
@@ -144,3 +145,8 @@ Desafio 23: Feito com HTML, SASS e JavaScript
 Desafio 24: Feito com HTML, CSS e JavaScript
 
 ![Alt text](assetsScreens/desafio-24.png)
+
+<br>
+Desafio 25: Feito com HTML, CSS, JavaScript e Youtube API Data
+
+![Alt text](assetsScreens/desafio-25.png)
